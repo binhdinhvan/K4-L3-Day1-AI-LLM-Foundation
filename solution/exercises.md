@@ -13,22 +13,6 @@ trả lời thật (chấm tự động sẽ đếm số câu đã trả lời).
 ### Câu 1.1 — Độ nhạy của temperature
 Gọi `call_openai` với temperature 0.0, 0.5, 1.0 và 1.5 dùng prompt
 **"Hãy kể cho tôi một sự thật thú vị về Việt Nam."**
-Temperature 0.0 (Thời gian: 2.59s):
-
-"Một sự thật thú vị: Việt Nam là quê hương của hang Sơn Đoòng ở Quảng Bình — hang động tự nhiên lớn nhất thế giới được biết đến hiện nay..." $\rightarrow$ Nhận xét: Model chọn câu trả lời có xác suất xuất hiện cao nhất, kinh điển và an toàn nhất (hang Sơn Đoòng), câu từ gãy gọn, mang tính khuôn mẫu.
-
-Temperature 0.5 (Thời gian: 4.80s):
-
-"Một sự thật thú vị: Việt Nam là nơi có hang động tự nhiên lớn nhất thế giới — hang Sơn Đoòng ở Quảng Bình. Hang này lớn đến mức bên trong có rừng nhiệt đới, sông ngầm, vách đá khổng lồ... UNESCO công nhận..." $\rightarrow$ Nhận xét: Vẫn là chủ đề Sơn Đoòng nhưng lối hành văn mượt mà, tự nhiên và mở rộng thêm nhiều chi tiết phong phú hơn.
-
-Temperature 1.0 (Thời gian: 2.56s):
-
-"Việt Nam có chùa Tam Chúc ở Hà Nam — một trong những quần thể chùa lớn nhất thế giới, với diện tích khoảng 5.100 ha. Nơi đây nổi bật bởi sự kết hợp kiến trúc..." $\rightarrow$ Nhận xét: Model bắt đầu rẽ sang một chủ đề hoàn toàn khác lạ và độc đáo hơn (Chùa Tam Chúc), vốn từ đa dạng hơn ("Vịnh Hạ Long trên cạn").
-
-Temperature 1.5 (Thời gian: 1.96s):
-
-"Một sự thật thú vị: Việt Nam là một trong những nước xuất khẩu cà phê lớn nhất thế giới — đứng thứ 2 toàn cầu sau Brazil. Đặc biệt, cà phê sữa đá là món uống rất mang tính biểu tượng..." $\rightarrow$ Nhận xét: Độ ngẫu nhiên tăng mạnh, model nhảy sang chủ đề khác (văn hóa cà phê).
-
 **Bạn nhận thấy quy luật gì qua bốn phản hồi?** (2–3 câu)
 Khi temperature càng tăng, tính ngẫu nhiên (randomness) và độ đa dạng trong việc lựa chọn chủ đề/từ ngữ của mô hình càng lớn. Ở mức thấp (0.0 – 0.5), mô hình tập trung vào các sự thật phổ biến nhất (như hang Sơn Đoòng) với văn phong quy chuẩn và tính nhất quán cao. Khi tăng lên 1.0 – 1.5, mô hình khai thác các token có xác suất thấp hơn để đưa ra các ý tưởng mới lạ (chùa Tam Chúc, văn hóa cà phê), nhưng khả năng dự đoán trước và tính ổn định của phản hồi sẽ giảm dần.
 

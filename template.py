@@ -255,13 +255,6 @@ def run_assistant(
 # BONUS (không bắt buộc — cho bạn nào xong sớm)
 # ===========================================================================
 def batch_compare(prompts: list[str]) -> list[dict]:
-    """
-    Chạy compare_models cho từng prompt trong list.
-
-    Returns:
-        List các dict — mỗi dict là kết quả compare_models kèm thêm
-        key "prompt" chứa prompt gốc.
-    """
     results = []
     for prompt in prompts:
         res = compare_models(prompt)
@@ -271,12 +264,6 @@ def batch_compare(prompts: list[str]) -> list[dict]:
 
 
 def format_comparison_table(results: list[dict]) -> str:
-    """
-    Định dạng kết quả batch_compare thành bảng text dễ đọc.
-
-    Cột: Prompt | GPT-4o Response | Mini Response | GPT-4o Latency | Mini Latency
-    Gợi ý: cắt text dài còn 40 ký tự cho dễ nhìn.
-    """
     def truncate(text: str, max_len: int = 40) -> str:
         text = text.replace("\n", " ")
         return (text[:max_len] + "...") if len(text) > max_len else text
